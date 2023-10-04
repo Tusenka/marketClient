@@ -1,0 +1,23 @@
+syntax = "proto3";
+package content;
+
+message Property {
+  optional string property= 1;
+  repeated string values = 2;
+}
+
+message Content {
+  optional string title = 1;
+  optional string img_preview = 2;
+  repeated string img_paths = 3;
+  optional string description = 4;
+  repeated Property properties = 5;
+}
+
+service Filter{
+  // A simple RPC.
+  //
+  // Obtains the MessageResponse at a given position.
+ rpc GetServerResponse(Message) returns (MessageResponse) {}
+
+}
