@@ -216,7 +216,6 @@ def __parse(url: str, dir: str) -> list:
     links = []
     while (page := next_page(url, driver)) is not None:
         links.extend(get_links(page, url))
-        break
     driver.close()
     content = Content(dir)
     items = []
